@@ -1,0 +1,120 @@
+.panel{
+    display: none;
+    padding: 20px;
+    background-color:hsl(208, 100%, 97%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease
+}
+
+body, h1, h2, p {
+    margin: 0;
+    padding: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing:border-box;
+}
+
+body{
+    background-color: rgb(74, 118, 138);
+    color: rgb(39, 35, 38);
+    text-align: center;
+    padding: 30px;
+}
+
+/* Estilo de titulo mejorado*/
+header h1{
+    font-size: 3rem; /*tamaño mas grande para tener mayor impacto*/
+    text-transform: uppercase;
+    letter-spacing: 4px; /*espacio entre palabras*/
+    margin: 0;
+    animation: glow 1.5s infinite alternate;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(90deg, #e1e1e1, #f4f4f4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /*efecto degradado en el texto*/
+    text-shadow: 0 0 10px rgb(0, 0, 0,0.5); /*sombreado para mayor profundidad*/
+}
+
+/*Fondo animado debajo del titulo*/
+header:before{
+    content: "";
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 02)0%, transparent 70%);
+    z-index: 0;
+    animation: pulse 6s infinite;
+    border-radius: 50%;
+}
+
+/*animacion de pulso*/
+@keyframes pulse{
+0%{
+    transform: translate(-50%,-50%) scale(1);
+    opacity: 1;
+}
+50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.6;
+
+}
+100%{
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+}
+
+p{
+    color: black;
+}
+
+h1{
+    font-size: 2rem;
+    color: aliceblue;
+}
+
+main{
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+.panel img{
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.panel h2{
+    font-size: 1,5rem;
+    margin-bottom: 10px;
+}
+
+#panel1:checked~#content-panel1,
+#panel2:checked~#content-panel2,
+#panel3:checked~#content-panel3,
+#panel4:checked~#content-panel4
+{
+    display: block;
+
+}
+
+/*Animacion*/
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*ocultar los controladores*/
+input[type="radio"]{
+display:none; }
+
